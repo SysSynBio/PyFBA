@@ -20,15 +20,16 @@ RUN apt-get update && \
 RUN pip3 install lxml python-libsbml-experimental beautifulsoup4 setuptools setuptools_scm wheel
 
 # Build and install pyglpk
-RUN git clone https://github.com/bradfordboyle/pyglpk && \
-    cd pyglpk && \
-    python3 setup.py build && \
-    python3 setup.py install && \
-    #make . && \
-    #make test && \
-    #make install && \
-    cd .. && \
-    rm -rf pyglpk
+#RUN git clone https://github.com/bradfordboyle/pyglpk && \
+#    cd pyglpk && \
+#    python3 setup.py build && \
+#    python3 setup.py install && \
+#    #make . && \
+#    #make test && \
+#    #make install && \
+#    cd .. && \
+#    rm -rf pyglpk
+RUN pip3 install glpk
 
 # Download ModelSEED database and set environment variable
 RUN cd /data && git clone https://github.com/ModelSEED/ModelSEEDDatabase
