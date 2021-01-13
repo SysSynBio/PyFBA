@@ -50,4 +50,6 @@ RUN pip3 install pyfba
 #USER pyfba
 
 # Now copy the scripts that assign functions to reactions
+COPY getGaps.py /bin/getGaps.py
+RUN chmod +x /bin/getGaps.py
 
